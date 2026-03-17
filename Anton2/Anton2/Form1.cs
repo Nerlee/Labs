@@ -36,7 +36,7 @@ namespace Anton2
             dataGridView1.Rows.Clear();
             foreach (var l in Lessons)
             {
-                dataGridView1.Rows.Add(l.Date.ToString("dd-MM-yyyy"), l.Time.ToString("hh\\.mm\\.ss"), l.Name);
+                dataGridView1.Rows.Add(l.Date.ToString("dd-MM-yyyy"), l.Time.ToString("hh\\:mm\\:ss"), l.Name);
             }
         }
 
