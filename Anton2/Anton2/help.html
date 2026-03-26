@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anton2 - Расписание уроков</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 20px;
+        }
+        .feature {
+            padding: 10px 0;
+            margin: 10px 0;
+        }
+        .file-example {
+            margin: 15px 0;
+            padding: 10px 0;
+            color: #333;
+            line-height: 1.8;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        ol li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="features">
+        <h2>Возможности</h2>
+        <div class="feature"><strong>Добавление уроков</strong> — создавайте записи с датой, временем и названием</div>
+        <div class="feature"><strong>Сохранение</strong> — экспортируйте данные в текстовый файл</div>
+        <div class="feature"><strong>Загрузка</strong> — импортируйте ранее сохранённые расписания</div>
+        <div class="feature"><strong>Удаление</strong> — удаляйте ненужные записи из списка</div>
+    </section>
+
+    <section id="howto">
+        <h2>Как использовать</h2>
+        
+        <h3>1. Добавление урока</h3>
+        <ol>
+            <li>Нажмите кнопку "Добавить"</li>
+            <li>Выберите дату и время</li>
+            <li>Введите название урока</li>
+            <li>Нажмите OK</li>
+        </ol>
+
+        <h3>2. Сохранение</h3>
+        <ol>
+            <li>Нажмите "Сохранить"</li>
+            <li>Выберите место для файла</li>
+            <li>Готово!</li>
+        </ol>
+
+        <h3>3. Открытие файла</h3>
+        <ol>
+            <li>Нажмите "Открыть"</li>
+            <li>Выберите файл .txt</li>
+            <li>Данные загрузятся в таблицу</li>
+        </ol>
+
+        <div class="feature">
+            <strong>Внимание:</strong> При открытии нового файла старые данные будут удалены!
+        </div>
+    </section>
+
+    <section>
+        <h2>Формат файла</h2>
+        <p>Данные сохраняются в текстовом файле в кодировке UTF-8:</p>
+        <div class="file-example">
+            15.09.2025 10:30:00 "Математика"<br>
+            16.09.2025 14:00:00 "Физика"<br>
+            17.09.2025 09:00:00 "История"
+        </div>
+        <p><strong>Формат:</strong> ДД.ММ.ГГГГ ЧЧ:ММ:СС "Название"</p>
+    </section>
+
+</body>
+</html>
