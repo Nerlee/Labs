@@ -1,9 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Anton2
 {
@@ -56,14 +57,14 @@ namespace Anton2
 
         private void OpenButton_Click(object? sender, EventArgs e)
         {
-            
+
             string path = LessonParser.OpenDialog();
             if (path != string.Empty)
             {
                 if (isOpened)
                     Lessons.Clear();
                 isOpened = true;
-                List <Lesson> tmpLessons = LessonParser.LoadFromFile(path);
+                List<Lesson> tmpLessons = LessonParser.LoadFromFile(path);
                 foreach (var l in tmpLessons)
                 {
                     Lessons.Add(l);
@@ -72,7 +73,7 @@ namespace Anton2
             }
             else
             {
-                MessageBox.Show("���� �� ������.");
+                MessageBox.Show("Файл не выбран.");
             }
         }
 
@@ -85,6 +86,20 @@ namespace Anton2
                 Lessons.RemoveAt(idx);
                 RefreshGrid();
             }
+        }
+        private void HelpButton_Click(object? sender, EventArgs e)
+        {
+            string helpPath = Path.Combine(Application.StartupPath, "help.html");
+
+            // Если файла нет в output, ищем в папке проекта
+            if (!File.Exists(helpPath))
+            {
+                helpPath = Path.Combine(Application.StartupPath, "..", "..", "..", "help.html");
+                helpPath = Path.GetFullPath(helpPath);
+            }
+
+            var helpForm = new HelpForm(helpPath);
+            helpForm.ShowDialog();  // ← Открываем как модальное ок
         }
     }
 }
